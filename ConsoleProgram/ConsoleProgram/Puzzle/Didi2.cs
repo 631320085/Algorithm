@@ -18,7 +18,7 @@ namespace ConsoleProgram.Puzzle
         public static void Run()
         {
             n = m = 8;
-            minp = 20;
+            minp = 30;
             map = new int[8, 8] {
                 {1, 0, 1, 0, 1, 0, 1, 1 },
                 {1, 1, 1, 0, 1, 1, 1, 1 },
@@ -46,7 +46,6 @@ namespace ConsoleProgram.Puzzle
                 return;
             }
             path += currentPoint;
-
             if (cn == 0 && cm == m - 1)
             {
                 //达到终点，如果该路径是最小消耗路径记录下来，更新最小消耗体力，超过此消耗的路径将放弃
@@ -66,7 +65,6 @@ namespace ConsoleProgram.Puzzle
                 int an2 = cn - 1;
                 int am1 = cm + 1;
                 int am2 = cm - 1;
-
                 //向下
                 if (an1 < n && (an1 != bn || cm != bm) && map[an1, cm] == 1)
                 {

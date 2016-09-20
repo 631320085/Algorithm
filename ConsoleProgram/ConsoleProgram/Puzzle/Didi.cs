@@ -62,7 +62,7 @@ namespace ConsoleProgram.Puzzle
                 if(p <= minp)
                 {
                     minp = p;
-                    minPath = path;
+                    minPath = path + "(" + cn + "," + cm + ")";
                 }
             }
             else
