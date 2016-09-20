@@ -15,26 +15,43 @@ namespace ConsoleProgram.Puzzle
         static int n, m, maxp;
         static int[,] map;
 
+        //最少消耗路径
+        static int minp;
+        static string minPath;
+
         public static void Run()
         {
-            string[] input = Console.ReadLine().Split(',');
-            n = int.Parse(input[0]);
-            m = int.Parse(input[1]);
-            //体力最大值（不限制会在循环路径中死循环）
-            maxp = int.Parse(input[2]);
-            map = new int[n, m];
-            for (int i = 0; i < n; i++)
-            {
-                string[] numbers = Console.ReadLine().Split(' ');
-                for (int j = 0; j < m; j++)
-                {
-                    map[i, j] = int.Parse(numbers[j]);
-                }
-            }
-            //输入完成生成矩阵
-            Console.WriteLine("输入完成");
+            //string[] input = Console.ReadLine().Split(',');
+            //n = int.Parse(input[0]);
+            //m = int.Parse(input[1]);
+            ////体力最大值（不限制会在循环路径中死循环）
+            //maxp = int.Parse(input[2]);
+            //map = new int[n, m];
+            //for (int i = 0; i < n; i++)
+            //{
+            //    string[] numbers = Console.ReadLine().Split(' ');
+            //    for (int j = 0; j < m; j++)
+            //    {
+            //        map[i, j] = int.Parse(numbers[j]);
+            //    }
+            //}
+            n = m = 8;
+            minp = maxp = 30;
+            map = new int[8, 8] {
+                {1, 0, 1, 0, 1, 0, 1, 1 },
+                {1, 1, 1, 0, 1, 1, 1, 1 },
+                {1, 0, 1, 1, 1, 0, 1, 1 },
+                {1, 1, 1, 0, 1, 1, 0, 1 },
+                {1, 1, 0, 0, 0, 1, 1, 1 },
+                {0, 1, 0, 1, 1, 0, 1, 0 },
+                {1, 1, 1, 0, 1, 1, 1, 1 },
+                {1, 0, 1, 1, 1, 0, 1, 1 }
+            };
+            DateTime startDate = DateTime.Now;
             Move("", 0, 0, 0, 0, 0);
-            Console.Read();
+            DateTime endtDate = DateTime.Now;
+            Console.WriteLine("最小消耗路径：" + minPath + " 消耗体力:" + minp);
+            Console.WriteLine("耗时：" + (endtDate - startDate).Milliseconds + "ms");
         }
 
         //递归移动，遍历所有可行路径
@@ -42,8 +59,11 @@ namespace ConsoleProgram.Puzzle
         {
             if (cn == 0 && cm == m - 1)
             {
-                //达到终点输出路径
-                Console.WriteLine(path + "(0," + (m - 1) + ")" + " 体力消耗：" + p);
+                if(p <= minp)
+                {
+                    minp = p;
+                    minPath = path;
+                }
             }
             else
             {

@@ -11,13 +11,19 @@ namespace ConsoleProgram
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("输入要运行的算法：");
-            string algorithm = Console.ReadLine();
-            switch(algorithm.ToLower())
+            while (true)
             {
-                case "didi":
-                    Didi.Run();
-                    break;
+                Console.WriteLine("输入要运行的算法：");
+                string algorithm = Console.ReadLine();
+                switch (algorithm.ToLower())
+                {
+                    case "didi":
+                        Didi.Run();
+                        break;
+                    case "didi2":
+                        Didi2.Run();
+                        break;
+                }
             }
         }
     }
