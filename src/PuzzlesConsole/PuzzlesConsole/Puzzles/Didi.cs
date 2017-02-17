@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ConsoleProgram.Puzzle
+namespace PuzzlesConsole.Puzzles
 {
-    class Didi2
+    class Didi
     {
         //矩阵行数、列数，允许消耗体力值
         static int n, m, minp;

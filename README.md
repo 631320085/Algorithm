@@ -1,2 +1,9 @@
-# Algorithm
-Some algorithm puzzle, I don't remeber some specialfic algorithm, just do it my way.
+# Puzzles
+
+> 1. **Didi**  
+
+![](http://images2015.cnblogs.com/blog/517209/201609/517209-20160920004459324-1170710735.png)  
+![](http://images2015.cnblogs.com/blog/517209/201609/517209-20160920004510746-118583690.png)  
+![](http://images2015.cnblogs.com/blog/517209/201609/517209-20160920004540106-2038520253.png)  
+![](http://images2015.cnblogs.com/blog/517209/201609/517209-20160920004549121-1345936988.png)  
+

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ConsoleProgram.Puzzle;
+using PuzzlesConsole.Puzzles;
 
-namespace ConsoleProgram
+namespace PuzzlesConsole
 {
     class Program
     {
@@ -13,15 +13,13 @@ namespace ConsoleProgram
         {
             while (true)
             {
-                Console.WriteLine("输入要运行的算法：");
-                string algorithm = Console.ReadLine();
-                switch (algorithm.ToLower())
+                Console.WriteLine("Choose puzzle");
+                Console.WriteLine("  1. didi");
+                Console.WriteLine("Input puzzle number:");
+                switch (Console.ReadLine().ToLower())
                 {
-                    case "didi":
+                    case "1":
                         Didi.Run();
-                        break;
-                    case "didi2":
-                        Didi2.Run();
                         break;
                 }
             }
